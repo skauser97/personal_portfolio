@@ -108,18 +108,13 @@ export default function Timeline() {
       const hT:P2={x:WR*0.85,y:-WR*1.05}
       const sC:P2={x:-WR*0.35,y:-WR*1.35}
       ctx.strokeStyle='rgba(129,140,248,0.95)'; ctx.lineWidth=1.4
-      const lines:[[P2,P2]][] = [
-        [[-WR*1.22,WR*0.1] as unknown as P2, bb as P2],
-        [bb, sC],
-        [sC, hT],
-        [bb, hT],
-        [[-WR*1.22,WR*0.1] as unknown as P2, sC],
-        [hT, [WR*1.22,WR*0.1] as unknown as P2],
+      const rw:{x:number;y:number} = {x:-WR*1.22, y:WR*0.1}
+      const fw:{x:number;y:number} = {x: WR*1.22, y:WR*0.1}
+      const lines:[{x:number;y:number},{x:number;y:number}][] = [
+        [rw, bb], [bb, sC], [sC, hT], [bb, hT], [rw, sC], [hT, fw],
       ]
       lines.forEach(([a,b])=>{
-        const ap=a as unknown as {x:number;y:number}
-        const bp=b as unknown as {x:number;y:number}
-        ctx.beginPath(); ctx.moveTo(ap.x??a[0],ap.y??a[1]); ctx.lineTo(bp.x??b[0],bp.y??b[1]); ctx.stroke()
+        ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke()
       })
 
       // Handlebar
