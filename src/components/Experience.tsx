@@ -1,16 +1,38 @@
 const jobs = [
-  { col:'cyan',   company:'NGO Voice AI Agent', role:'AI Engineer · Freelance', date:'2024 – Present',
-    bullets:['Built a Hindi/Hinglish phone-based voice AI for NGO outreach in rural India','No app required — works on any mobile; designed for underserved, low-literacy communities','Deployed end-to-end: ASR → LLM → TTS pipeline on a live phone line'] },
-  { col:'purple', company:'Ruya Labs', role:'AI / Data Engineer', date:'2024 – Present',
-    bullets:['Data engineering, NLP and semantic analysis (POC)','Building robust pipelines for structured and unstructured data','Contributed to early-stage AI product development'] },
-  { col:'green',  company:'STEM Educator', role:'Robotics · AI · Coding', date:'2023 – Present',
-    bullets:['Teaching robotics, AI and coding to children at Yuvakala (Avalhalli, Bangalore)','Making complex concepts accessible and joyful for young learners'] },
-  { col:'pink',   company:'NHS East Kent', role:'Data Analyst', date:'Sep 2023 – Sep 2024',
-    bullets:['Healthcare data analysis supporting clinical and operational decision-making','Worked with sensitive patient data under strict IG/GDPR frameworks'] },
-  { col:'amber',  company:'Deloitte', role:'Analyst', date:'2021 – 2022',
-    bullets:['Data analysis and reporting in a consulting environment','Cross-functional stakeholder engagement'] },
-  { col:'amber',  company:'LTI Mindtree', role:'Graduate Engineer', date:'2019 – 2021',
-    bullets:['Software engineering and data workflows','Exposure to enterprise-scale systems and agile delivery'] },
+  { col:'cyan', company:'Project Smile', role:'AI Engineer · Pro Bono', date:'May 2026 – Present',
+    bullets:[
+      'Built a Hindi/Hinglish voice AI agent for an NGO — phone-based interactions for underserved communities, no app required.',
+      'Designed stateful multi-turn dialogue using LangGraph; Deepgram for real-time STT with Hindi/English code-switching; Sarvam AI for natural Hindi TTS and Indic language support.',
+      'Solved latency via response streaming — audio playback begins before LLM output completes; implemented mid-call state recovery for dropped calls.',
+      'Backend: FastAPI + PostgreSQL for conversation history, user state, and multi-user session handling.',
+    ]},
+  { col:'purple', company:'Ruya Labs', role:'AI Engineer · Contract', date:'Dec 2025 – Present',
+    bullets:[
+      'Evaluated AI voice models across accuracy, latency, cost, and language support for healthcare deployment; integrated voice APIs into clinical workflows enabling automated patient interaction and data capture.',
+      'Contributing to Tally.bio — an early-stage biotech intelligence platform; built and deployed analytical dashboards, authored published articles, and supporting website development and analytics integration.',
+      'Integrated semantic retrieval using pgvector to enable AI-driven insights across document stores.',
+      'Implemented sentiment analysis, text feature extraction, and sentence embeddings for NLP exploration; designed PostgreSQL schemas and performed data cleaning and preprocessing (pandas, regex).',
+    ]},
+  { col:'green', company:'STEM Educator', role:'Robotics · AI · Coding', date:'Sep 2024 – Oct 2025',
+    bullets:[
+      'Teaching robotics, AI and coding to children at Yuvakala (Avalhalli, Bangalore) and other schools.',
+      'Ran hands-on workshops and summer camps — making complex AI/ML concepts accessible and joyful for young learners with no prior experience.',
+    ]},
+  { col:'pink', company:'NHS East Kent', role:'Data Scientist', date:'Dec 2022 – Sep 2023',
+    bullets:[
+      'Built XGBoost and Random Forest models to predict patient attendance from EHR records, improving resource allocation by ~20%.',
+      'Achieved 88% accuracy via k-fold cross-validation; deployed with drift monitoring and a stakeholder dashboard for targeted clinical interventions.',
+    ]},
+  { col:'amber', company:'Deloitte', role:'Data Engineer', date:'Mar 2022 – Sep 2022',
+    bullets:[
+      'Built Impala/Hadoop pipelines reducing manual data handling by ~30%; orchestrated end-to-end ETL with Oozie.',
+      'Modelled analytics-ready datasets for downstream BI reporting.',
+    ]},
+  { col:'amber', company:'LTI Mindtree', role:'Data Engineer', date:'Jun 2019 – Dec 2021',
+    bullets:[
+      'Designed Informatica PowerCenter workflows for enterprise-scale data integration and storage optimisation.',
+      'Developed snowflake and star schema data models, improving retrieval and analytical efficiency by 20%.',
+    ]},
 ]
 
 export default function Experience() {
