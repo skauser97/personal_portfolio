@@ -6,7 +6,7 @@ const jobs = [
       'Solved latency via response streaming — audio playback begins before LLM output completes; implemented mid-call state recovery for dropped calls.',
       'Built stateful multi-turn conversation orchestration using LangGraph; currently evaluating latency and LLM cost tradeoffs to determine production approach.',
     ]},
-  { col:'purple', company:'Ruya Labs', role:'AI Engineer · Pro Bono', date:'Dec 2025 – Present',
+  { col:'purple', company:'Ruya Labs', role:'AI Engineer · Early Contributor', date:'Dec 2025 – Present',
     bullets:[
       'Working across multiple early-stage AI projects under Ruya Labs — an emerging AI venture spanning healthcare, biotech, and voice AI.',
       'Currently contributing to Tally.bio — a biotech intelligence platform; building analytical dashboards, authoring published articles, and supporting website development and analytics integration.',
