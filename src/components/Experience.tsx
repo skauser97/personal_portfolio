@@ -20,8 +20,9 @@ const jobs = [
     ]},
   { col:'pink', company:'NHS East Kent', role:'Data Scientist', date:'Dec 2022 – Sep 2023',
     bullets:[
-      'Built XGBoost and Random Forest models to predict patient attendance from EHR records, improving resource allocation by ~20%.',
-      'Achieved 88% accuracy via k-fold cross-validation; deployed with drift monitoring and a stakeholder dashboard for targeted clinical interventions.',
+      'Built XGBoost and Random Forest models to predict patient attendance from EHR/appointment records, improving resource allocation by ~20%.',
+      'Achieved 88% accuracy via k-fold cross-validation and hyperparameter tuning; benchmarked against multiple baseline models.',
+      'Deployed models with logging and drift monitoring; built a stakeholder dashboard enabling targeted clinical interventions.',
     ]},
   { col:'amber', company:'Deloitte', role:'Data Engineer', date:'Mar 2022 – Sep 2022',
     bullets:[

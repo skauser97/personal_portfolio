@@ -2,12 +2,13 @@
 import { useEffect, useRef } from 'react'
 
 const NODES = [
-  { year: '2015', label: 'Medical Electronics', sub: 'BMS College of Engineering',  col: [167,139,250] },
-  { year: '2019', label: 'Data & Consulting',   sub: 'LTI Mindtree · Deloitte',     col: [245,158,11]  },
-  { year: '2022', label: 'Health Data Science', sub: 'University of Exeter',         col: [34,211,238]  },
-  { year: '2023', label: 'NHS East Kent',        sub: 'Data Analyst',                col: [244,114,182] },
-  { year: '2024', label: 'AI Engineer',          sub: 'Ruya Labs · NGO Voice AI',   col: [99,102,241]  },
-  { year: '2026', label: 'Builder',              sub: 'Hilmy · Biotech · Teaching', col: [52,211,153]  },
+  { year: '2015', label: 'Medical Electronics', sub: 'BMS College of Engineering',   col: [167,139,250] },
+  { year: '2019', label: 'Data & Consulting',   sub: 'LTI Mindtree · Deloitte',      col: [245,158,11]  },
+  { year: '2022', label: 'Health Data Science', sub: 'University of Exeter',          col: [34,211,238]  },
+  { year: '2023', label: 'NHS East Kent',        sub: 'Data Scientist · Dec 2022–Sep 2023', col: [244,114,182] },
+  { year: '2024', label: 'STEM Educator',        sub: 'Yuvakala · Robotics & AI',    col: [251,146,60]  },
+  { year: '2025', label: 'AI Engineer',          sub: 'Ruya Labs · Project Smile',   col: [99,102,241]  },
+  { year: '2026', label: 'Builder',              sub: 'Hilmy · Biotech · Writing',   col: [52,211,153]  },
 ]
 
 export default function Timeline() {
