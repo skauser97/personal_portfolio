@@ -1,17 +1,18 @@
 const jobs = [
-  { col:'cyan', company:'Project Smile', role:'AI Engineer · Pro Bono', date:'May 2026 – Present',
+  { col:'cyan', company:'Project Smile', role:'AI Engineer · Contract', date:'May 2026 – Present',
     bullets:[
-      'Built a Hindi/Hinglish voice AI agent for an NGO — phone-based interactions for underserved communities, no app required.',
-      'Designed stateful multi-turn dialogue using LangGraph; Deepgram for real-time STT with Hindi/English code-switching; Sarvam AI for natural Hindi TTS and Indic language support.',
-      'Solved latency via response streaming — audio playback begins before LLM output completes; implemented mid-call state recovery for dropped calls.',
-      'Backend: FastAPI + PostgreSQL for conversation history, user state, and multi-user session handling.',
+      'Building a phone-based Hindi/Hinglish voice AI for Project Smile (NGO) via Twilio — core system functional, in active development. No app or smartphone required; designed for underserved communities with zero digital access.',
+      'Deepgram for real-time STT with Hindi/English code-switching; Qwen (open-source LLM) for generation; evaluated multiple STT/TTS providers including Sarvam AI for Indic language support.',
+      'Engineered response streaming to cut perceived latency — audio playback begins before LLM output completes, keeping conversations fluid on low-quality phone lines.',
+      'Stateful multi-turn dialogue with mid-call state recovery for dropped connections; conversation history and user state persisted in PostgreSQL.',
+      'Backend: FastAPI handling real-time audio routing, session management, and concurrent multi-user call handling.',
     ]},
-  { col:'purple', company:'Ruya Labs', role:'AI Engineer · Contract', date:'Dec 2025 – Present',
+  { col:'purple', company:'Ruya Labs', role:'AI Engineer · Pro Bono', date:'Dec 2025 – Present',
     bullets:[
-      'Evaluated AI voice models across accuracy, latency, cost, and language support for healthcare deployment; integrated voice APIs into clinical workflows enabling automated patient interaction and data capture.',
-      'Contributing to Tally.bio — an early-stage biotech intelligence platform; built and deployed analytical dashboards, authored published articles, and supporting website development and analytics integration.',
-      'Integrated semantic retrieval using pgvector to enable AI-driven insights across document stores.',
-      'Implemented sentiment analysis, text feature extraction, and sentence embeddings for NLP exploration; designed PostgreSQL schemas and performed data cleaning and preprocessing (pandas, regex).',
+      'Working across multiple early-stage AI projects under Ruya Labs — an emerging AI venture spanning healthcare, biotech, and voice AI.',
+      'Currently contributing to Tally.bio — a biotech intelligence platform; building analytical dashboards, authoring published articles, and supporting website development and analytics integration.',
+      'Previously led two POC explorations: voice model evaluation for healthcare (accuracy, latency, cost, multilingual support) and NLP/semantic analysis pipeline (pgvector, sentence embeddings, sentiment analysis, text feature extraction).',
+      'Designed PostgreSQL schemas for raw and processed data; performed data cleaning and preprocessing using Python (pandas, regex).',
     ]},
   { col:'green', company:'STEM Educator', role:'Robotics · AI · Coding', date:'Sep 2024 – Oct 2025',
     bullets:[
