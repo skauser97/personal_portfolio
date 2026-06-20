@@ -29,9 +29,11 @@ export default function About() {
             <p className="section-label">About</p>
             <h2 className="section-title">Two worlds, one builder.</h2>
             <p>
-              I&apos;m building a <strong>Hindi/Hinglish voice AI</strong> for NGO outreach in India —
-              phone-based, no app required, designed for underserved communities with zero digital access.
-              One of the most meaningful projects of my career.
+              I&apos;m building a <strong>Hindi/Hinglish voice AI</strong> for Project Smile, an NGO in Bangalore.
+              They get calls from all kinds of people — someone reporting a missing person, a shelter wanting
+              to collaborate, a donor with questions. The agent handles these 24/7, triages miscalls, captures
+              information, and cuts the menial work that currently falls on staff. One of the most meaningful
+              things I&apos;ve worked on.
             </p>
             <p>
               At <strong>Ruya Labs</strong> I work across data engineering, NLP, and semantic analysis,
