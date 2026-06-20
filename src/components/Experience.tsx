@@ -1,12 +1,10 @@
 const jobs = [
   { col:'cyan', company:'Project Smile', role:'AI Engineer · Contract', date:'May 2026 – Present',
     bullets:[
-      'Building a phone-based Hindi/Hinglish voice AI for Project Smile (NGO) via Twilio — core system functional, in active development. No app or smartphone required; designed for underserved communities with zero digital access.',
+      'Building a phone-based Hindi/Hinglish voice AI for Project Smile (NGO) via Twilio — core system functional, in active development.',
       'Deepgram for real-time STT with Hindi/English code-switching; Qwen (open-source LLM) for generation; evaluated multiple STT/TTS providers including Sarvam AI for Indic language support.',
-      'Engineered response streaming to cut perceived latency — audio playback begins before LLM output completes, keeping conversations fluid on low-quality phone lines.',
+      'Solved latency via response streaming — audio playback begins before LLM output completes; implemented mid-call state recovery for dropped calls.',
       'Built stateful multi-turn conversation orchestration using LangGraph; currently evaluating latency and LLM cost tradeoffs to determine production approach.',
-      'Mid-call state recovery for dropped connections; conversation history and user state persisted in PostgreSQL across sessions.',
-      'Backend: FastAPI handling real-time audio routing, session management, and concurrent multi-user call handling.',
     ]},
   { col:'purple', company:'Ruya Labs', role:'AI Engineer · Pro Bono', date:'Dec 2025 – Present',
     bullets:[

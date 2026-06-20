@@ -29,14 +29,14 @@ export default function About() {
             <p className="section-label">About</p>
             <h2 className="section-title">Two worlds, one builder.</h2>
             <p>
-              At <strong>Ruya Labs</strong> I work across data engineering, NLP, and semantic analysis (POC).
-              Alongside that I&apos;m building <strong>Hilmy</strong> — an AI voice companion focused on psychology
-              and emotional support — and exploring biotech through a market mapping project,
-              a recommendation agent, and published writing on the space.
+              I&apos;m building a <strong>Hindi/Hinglish voice AI</strong> for NGO outreach in India —
+              phone-based, no app required, designed for underserved communities with zero digital access.
+              One of the most meaningful projects of my career.
             </p>
             <p>
-              I also built a <strong>Hindi/Hinglish voice AI</strong> for NGO outreach in India — phone-based,
-              no app required, designed for underserved communities. One of the most meaningful projects of my career.
+              At <strong>Ruya Labs</strong> I work across data engineering, NLP, and semantic analysis,
+              contributing to <strong>Tally.bio</strong> — a biotech intelligence platform — and exploring
+              the AI/biotech space through market mapping, a recommendation agent, and published writing on the space.
             </p>
             <p>
               And I teach. Robotics, AI, and coding to kids — including at <strong>Yuvakala</strong> (Avalhalli, Bangalore)
