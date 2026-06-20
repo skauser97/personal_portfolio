@@ -25,7 +25,7 @@ export default function Timeline() {
     let W = 0, H = 0
 
     function resize() {
-      W = wrap.offsetWidth  || window.innerWidth
+      W = wrap!.offsetWidth  || window.innerWidth
       H = 320
       canvas!.style.width  = W + 'px'
       canvas!.style.height = H + 'px'
