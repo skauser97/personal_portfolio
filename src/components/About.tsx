@@ -27,7 +27,7 @@ export default function About() {
           </div>
           <div className="about-bio">
             <p className="section-label">About</p>
-            <h2 className="section-title">Two worlds, one builder.</h2>
+            <h2 className="section-title">AI engineer. Voice AI, NLP, biotech.</h2>
             <p>
               I&apos;m building a voice agent for <strong>Project Smile</strong>, an NGO in Bangalore —
               Hindi/Hinglish, phone-based, always on. Calls come in from everywhere: missing person reports,

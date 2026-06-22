@@ -5,8 +5,8 @@ export default function Contact() {
         <p className="section-label reveal">Contact</p>
         <h2 className="section-title reveal">Let&apos;s build something.</h2>
         <p className="reveal" style={{ color:'var(--muted)', maxWidth:'520px', lineHeight:1.8, marginBottom:'0.5rem' }}>
-          Open to roles in AI engineering, NLP, health-tech, and anything at the edge of language + biology.
-          Also happy to chat about Voice AI, RAG systems, or biotech.
+          Open to contract and full-time roles — AI Engineer, NLP Engineer, Voice AI, Health-tech.
+          Also happy to chat about RAG systems, biotech, or voice AI.
         </p>
         <div className="contact-grid reveal">
           {[

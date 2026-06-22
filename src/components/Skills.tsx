@@ -12,8 +12,8 @@ const chips = [
 
 const bars = [
   { name:'Python',       level:'Advanced',      w:92, cls:'pf-pur' },
-  { name:'LLMs & Prompting', level:'Advanced',  w:88, cls:'pf-pur' },
-  { name:'Voice AI',     level:'Advanced',      w:85, cls:'pf-cyn' },
+  { name:'LLMs & Prompting', level:'Proficient',  w:78, cls:'pf-pur' },
+  { name:'Voice AI',     level:'Proficient',    w:72, cls:'pf-cyn' },
   { name:'RAG Systems',  level:'Proficient',    w:80, cls:'pf-cyn' },
   { name:'SQL',          level:'Proficient',    w:82, cls:'pf-grn' },
   { name:'ML / sklearn', level:'Proficient',    w:78, cls:'pf-grn' },

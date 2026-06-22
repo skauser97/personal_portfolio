@@ -9,30 +9,30 @@ const jobs = [
   { col:'purple', company:'Ruya Labs', role:'AI Engineer · Early Contributor', date:'Dec 2025 – Present',
     bullets:[
       'Working across multiple early-stage AI projects under Ruya Labs — an emerging AI venture spanning healthcare, biotech, and voice AI.',
-      'Currently contributing to Tally.bio — a biotech intelligence platform; building analytical dashboards, authoring published articles, and supporting website development and analytics integration.',
+      <>Currently contributing to <a href="https://tally.bio" target="_blank" rel="noreferrer" style={{color:'var(--cyn)'}}>Tally.bio</a> — a biotech intelligence platform; building analytical dashboards, authoring published articles, and supporting website development and analytics integration.</>,
       'Previously led two POC explorations: voice model evaluation for healthcare (accuracy, latency, cost, multilingual support) and NLP/semantic analysis pipeline (pgvector, sentence embeddings, sentiment analysis, text feature extraction).',
       'Designed PostgreSQL schemas for raw and processed data; performed data cleaning and preprocessing using Python (pandas, regex).',
     ]},
   { col:'green', company:'STEM Educator', role:'Robotics · AI · Coding', date:'Sep 2024 – Oct 2025',
     bullets:[
-      'Teaching robotics, AI and coding to children at Yuvakala (Avalhalli, Bangalore) and other schools.',
+      'Teaching robotics, Python, and Scratch to kids across Bangalore — at Iwan, Yuvakala (Avalhalli), and through private sessions.',
       'Ran hands-on workshops and summer camps — making complex AI/ML concepts accessible and joyful for young learners with no prior experience.',
     ]},
   { col:'pink', company:'NHS East Kent', role:'Data Scientist', date:'Dec 2022 – Sep 2023',
     bullets:[
-      'Built XGBoost and Random Forest models to predict patient attendance from EHR/appointment records, improving resource allocation by ~20%.',
+      'Built XGBoost and Random Forest models on 1M+ EHR/appointment records to predict patient attendance; reduced features from ~15 to 7 through selection, improving clinical resource allocation by ~20%.',
       'Achieved 88% accuracy via k-fold cross-validation and hyperparameter tuning; benchmarked against multiple baseline models.',
       'Deployed models with logging and drift monitoring; built a stakeholder dashboard enabling targeted clinical interventions.',
     ]},
   { col:'amber', company:'Deloitte', role:'Data Engineer', date:'Mar 2022 – Sep 2022',
     bullets:[
-      'Built Impala/Hadoop pipelines reducing manual data handling by ~30%; orchestrated end-to-end ETL with Oozie.',
+      'Built and maintained Impala/Hadoop pipelines for large-scale data ingestion, normalisation, and transformation; orchestrated end-to-end ETL workflows with Oozie.',
       'Modelled analytics-ready datasets for downstream BI reporting.',
     ]},
   { col:'amber', company:'LTI Mindtree', role:'Data Engineer', date:'Jun 2019 – Dec 2021',
     bullets:[
       'Designed Informatica PowerCenter workflows for enterprise-scale data integration and storage optimisation.',
-      'Developed snowflake and star schema data models, improving retrieval and analytical efficiency by 20%.',
+      'Developed snowflake and star schema data models to support analytical reporting and improve query performance.',
     ]},
 ]
 
