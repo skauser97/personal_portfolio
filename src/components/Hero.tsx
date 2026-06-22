@@ -11,7 +11,7 @@ export default function Hero() {
         <p className="hero-eyebrow reveal">AI Engineer · NLP · Voice AI · Biotech</p>
         <h1 className="hero-name reveal">Sadia<br />Kauser</h1>
         <p className="hero-title reveal">
-          Building intelligent systems at the edge of <span>language</span>, <span>health</span> and <span>biology</span>.
+          Building <span>voice AI</span>, <span>NLP systems</span>, and <span>biotech intelligence</span> tools.
         </p>
         <div className="hero-btns reveal">
           <a href="#projects" className="btn-primary">View Projects</a>

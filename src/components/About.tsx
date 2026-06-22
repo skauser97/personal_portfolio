@@ -29,10 +29,9 @@ export default function About() {
             <p className="section-label">About</p>
             <h2 className="section-title">AI engineer. Voice AI, NLP, biotech.</h2>
             <p>
-              I&apos;m building a voice agent for <strong>Project Smile</strong>, an NGO in Bangalore —
-              Hindi/Hinglish, phone-based, always on. Calls come in from everywhere: missing person reports,
-              shelters wanting to partner, donors, volunteers. The agent handles the noise, routes what matters,
-              and logs what needs a human.
+              I&apos;m an AI engineer working across voice AI, NLP, and biotech. Right now: building a
+              Hindi/Hinglish voice agent for <strong>Project Smile</strong>, an NGO in Bangalore — so a small
+              team doesn&apos;t have to manually handle every incoming call or drown in paperwork.
             </p>
             <p>
               At <strong>Ruya Labs</strong> I work across data engineering, NLP, and semantic analysis,
@@ -40,8 +39,8 @@ export default function About() {
               the AI/biotech space through market mapping, a recommendation agent, and published writing on the space.
             </p>
             <p>
-              And I teach. Robotics, Python, and Scratch to kids across Bangalore — at Iwan, Yuvakala in Avalhalli,
-              and in private sessions — because if you can explain it to a ten-year-old, you actually know it.
+              And I teach. Robotics, Python, and Scratch to kids across Bangalore — because if you can
+              explain it to a ten-year-old, you actually know it.
             </p>
             <div className="about-tags">
               {tags.map(t => <span key={t} className="about-tag">{t}</span>)}
