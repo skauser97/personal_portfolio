@@ -276,7 +276,9 @@ export default function Timeline() {
       <div className="section-wrap">
         <p className="section-label reveal">Career Path</p>
         <h2 className="section-title reveal">The journey so far.</h2>
-        <div ref={wrapRef} className="reveal" style={{ width:'100%', marginTop:'2rem', position:'relative' }}>
+
+        {/* Animated canvas — desktop/tablet */}
+        <div ref={wrapRef} className="reveal timeline-canvas-wrap" style={{ width:'100%', marginTop:'2rem', position:'relative' }}>
           <canvas
             ref={ref}
             style={{
@@ -285,6 +287,20 @@ export default function Timeline() {
               borderRadius:'14px',
             }}
           />
+        </div>
+
+        {/* Simple vertical list — mobile fallback, avoids cramped canvas labels */}
+        <div className="timeline-mobile-list reveal">
+          {NODES.map((n, i) => (
+            <div key={n.year} className="tml-item">
+              <span className="tml-dot" style={{ background: `rgb(${n.col.join(',')})`, boxShadow: `0 0 8px rgb(${n.col.join(',')})` }} />
+              <div>
+                <div className="tml-year" style={{ color: `rgb(${n.col.join(',')})` }}>{n.year}</div>
+                <div className="tml-label">{n.label}</div>
+                <div className="tml-sub">{n.sub}</div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
