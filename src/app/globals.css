@@ -313,20 +313,7 @@ body {
   width: 100%;
   margin-top: 2rem;
 }
-.timeline-mobile-list { display: none; }
-.tml-item {
-  display: grid;
-  grid-template-columns: 14px 1fr;
-  gap: 1rem;
-  align-items: start;
-  padding: 0.9rem 0;
-  border-bottom: 1px solid var(--border);
-}
-.tml-item:last-child { border-bottom: none; }
-.tml-dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 6px; }
-.tml-year { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; }
-.tml-label { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: var(--text); margin-top: 0.15rem; }
-.tml-sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.15rem; line-height: 1.5; }
+.timeline-mobile-canvas { display: none; }
 
 /* ── Experience ── */
 #experience { border-bottom: 1px solid var(--border); }
@@ -645,9 +632,9 @@ footer {
 
   .nav-logo     { font-size: 0.76rem; }
 
-  /* Swap the canvas career-path animation for a simple readable list */
+  /* Swap desktop canvas for mobile carousel canvas */
   .timeline-canvas-wrap { display: none; }
-  .timeline-mobile-list { display: block; margin-top: 1.5rem; }
+  .timeline-mobile-canvas { display: block; }
 }
 
 @media (max-width: 420px) {
