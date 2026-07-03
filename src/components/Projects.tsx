@@ -29,12 +29,13 @@ const projects = [
     live: 'https://skauser97.github.io/biotech_ai_map/',
   },
   {
-    tags: [['bio','Biotech'],['ai','ReAct Agent']],
+    tags: [['bio','Biotech'],['ai','ReAct Agent'],['live','Live']],
     title: 'Biotech Research Agent',
     desc: 'ReAct agent that answers complex biotech questions by querying real scientific databases — PubMed, ClinicalTrials.gov, UniProt, OpenTargets, ChEMBL, NCBI Gene. Ask about KRAS inhibitors in phase 2/3 trials and get sourced, structured answers.',
     metrics: [],
     techs: ['Python','Groq / LLaMA 3','PubMed API','ClinicalTrials.gov','Streamlit'],
     gh: 'https://github.com/skauser97/biotech_agent',
+    live: 'https://biotech-research-agent.streamlit.app/',
   },
   {
     tags: [['health','Healthcare'],['ai','NLP']],

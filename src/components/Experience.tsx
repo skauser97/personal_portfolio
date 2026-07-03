@@ -3,13 +3,14 @@ const jobs = [
     bullets:[
       'Building a phone-based Hindi/Hinglish voice AI for Project Smile (NGO) via Twilio — core system functional, in active development.',
       'Deepgram for real-time STT with Hindi/English code-switching; Qwen (open-source LLM) for generation; evaluated multiple STT/TTS providers including Sarvam AI for Indic language support.',
-      'Solved latency via response streaming — audio playback begins before LLM output completes; implemented mid-call state recovery for dropped calls.',
-      'Built stateful multi-turn conversation orchestration using LangGraph; currently evaluating latency and LLM cost tradeoffs to determine production approach.',
+      'Solved latency via response streaming — audio playback begins before LLM output completes; reduced first-token-to-audio to ~800ms. Implemented mid-call state recovery for dropped calls.',
+      'Built stateful multi-turn conversation orchestration using LangGraph with guardrails for topic steering, hallucination checks, and PII redaction (Presidio) before logging.',
+      'Optimized deployment costs through prompt caching, dynamic model routing (smaller model for simple turns, full model for complex ones), and call-level token budgets — targeting <$0.02/call at production scale.',
     ]},
   { col:'purple', company:'Ruya Labs', role:'AI Engineer · Early Contributor', date:'Dec 2025 – Present',
     bullets:[
       'Working across multiple early-stage AI projects under Ruya Labs — an emerging AI venture spanning healthcare, biotech, and voice AI.',
-      <>Currently contributing to <a href="https://tally.bio" target="_blank" rel="noreferrer" style={{color:'var(--cyn)'}}>Tally.bio</a> — a biotech intelligence platform; building analytical dashboards, authoring published articles, and supporting website development and analytics integration.</>,
+      <>Currently contributing to <a href="https://tally.bio" target="_blank" rel="noreferrer" style={{color:'var(--cyn)'}}>Tally.bio</a> — a biotech intelligence platform; building analytical dashboards, authoring published articles, and supporting website development and analytics integration. Contributed to the <a href="https://tally.bio/market-map" target="_blank" rel="noreferrer" style={{color:'var(--cyn)'}}>Biotech × AI Market Map</a>.</>,
       'Previously led two POC explorations: voice model evaluation for healthcare (accuracy, latency, cost, multilingual support) and NLP/semantic analysis pipeline (pgvector, sentence embeddings, sentiment analysis, text feature extraction).',
       'Designed PostgreSQL schemas for raw and processed data; performed data cleaning and preprocessing using Python (pandas, regex).',
     ]},

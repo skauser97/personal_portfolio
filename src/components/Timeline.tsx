@@ -124,45 +124,58 @@ function initDesktopCanvas(canvas:HTMLCanvasElement, wrap:HTMLDivElement) {
 
     NODES.forEach((n,i)=>{
       const px=pts[i].x, py=pts[i].y
-      const target = i<=visitedUpTo ? 1 : 0
-      expand[i] = lerp(expand[i], target, 0.07)
+      let target = 0
+      if (i === activeNode) target = 1
+      else if (activeNode >= 0 && Math.abs(i - activeNode) === 1) target = 0.4
+      else if (i <= visitedUpTo) target = 0.15
+      expand[i] = lerp(expand[i], target, 0.06)
       const [r,g,b] = n.col
-      const baseR=7, bonusR=expand[i]*9, dotR=baseR+bonusR
+      const f = expand[i]
+      const dotR = 4 + f * 12
 
-      const grd=ctx.createRadialGradient(px,py,0,px,py,dotR*3)
-      grd.addColorStop(0,`rgba(${r},${g},${b},${0.25*expand[i]})`)
-      grd.addColorStop(1,`rgba(${r},${g},${b},0)`)
-      ctx.beginPath(); ctx.arc(px,py,dotR*3,0,Math.PI*2)
-      ctx.fillStyle=grd; ctx.fill()
+      if (f > 0.05) {
+        const grd=ctx.createRadialGradient(px,py,0,px,py,dotR*3.5)
+        grd.addColorStop(0,`rgba(${r},${g},${b},${0.3*f})`)
+        grd.addColorStop(1,`rgba(${r},${g},${b},0)`)
+        ctx.beginPath(); ctx.arc(px,py,dotR*3.5,0,Math.PI*2)
+        ctx.fillStyle=grd; ctx.fill()
+      }
 
       ctx.beginPath(); ctx.arc(px,py,dotR,0,Math.PI*2)
-      ctx.strokeStyle=`rgba(${r},${g},${b},${0.5+expand[i]*0.5})`
-      ctx.lineWidth=2; ctx.stroke()
+      ctx.strokeStyle=`rgba(${r},${g},${b},${0.35+f*0.65})`
+      ctx.lineWidth=1.5+f; ctx.stroke()
 
-      ctx.beginPath(); ctx.arc(px,py,dotR-2,0,Math.PI*2)
-      ctx.fillStyle=`rgba(${r},${g},${b},${0.15+expand[i]*0.5})`
+      ctx.beginPath(); ctx.arc(px,py,dotR-1.5,0,Math.PI*2)
+      ctx.fillStyle=`rgba(${r},${g},${b},${0.08+f*0.45})`
       ctx.fill()
 
-      ctx.beginPath(); ctx.arc(px,py,3+expand[i]*2,0,Math.PI*2)
-      ctx.fillStyle=`rgba(${r},${g},${b},${0.7+expand[i]*0.3})`
-      ctx.shadowColor=`rgb(${r},${g},${b})`; ctx.shadowBlur=expand[i]*14
+      ctx.beginPath(); ctx.arc(px,py,2+f*3,0,Math.PI*2)
+      ctx.fillStyle=`rgba(${r},${g},${b},${0.5+f*0.5})`
+      ctx.shadowColor=`rgb(${r},${g},${b})`; ctx.shadowBlur=f*16
       ctx.fill(); ctx.shadowBlur=0
 
-      const labelAlpha = clamp(expand[i]*2.5,0,1)
-      if (labelAlpha > 0.05) {
-        const above = py < H*0.5
-        const ly = above ? py-dotR-18 : py+dotR+16
-        const isLight = document.documentElement.classList.contains('light')
-        const textMain = isLight ? 'rgba(15,10,40,0.95)' : 'rgba(226,232,240,0.95)'
-        const textMuted = isLight ? 'rgba(50,40,80,0.75)' : 'rgba(100,116,139,0.85)'
+      const above = py < H*0.5
+      const ly = above ? py-dotR-14 : py+dotR+13
+      const isLight = document.documentElement.classList.contains('light')
+      const textMain = isLight ? 'rgba(15,10,40,0.95)' : 'rgba(226,232,240,0.95)'
+      const textMuted = isLight ? 'rgba(50,40,80,0.75)' : 'rgba(100,116,139,0.85)'
 
-        ctx.globalAlpha=labelAlpha
+      if (f > 0.15) {
+        const yearAlpha = clamp(f*2.5,0,1)
+        ctx.globalAlpha=yearAlpha
         ctx.fillStyle=`rgb(${r},${g},${b})`
-        ctx.font='bold 11px "JetBrains Mono",monospace'
+        ctx.font=`bold ${10+f*2}px "JetBrains Mono",monospace`
         ctx.textAlign='center'
         ctx.fillText(n.year, px, ly)
+        ctx.globalAlpha=1
+      }
+
+      if (f > 0.5) {
+        const labelAlpha = clamp((f-0.5)*4,0,1)
+        ctx.globalAlpha=labelAlpha
         ctx.fillStyle=textMain
         ctx.font='bold 10px "JetBrains Mono",monospace'
+        ctx.textAlign='center'
         ctx.fillText(n.label, px, ly+14)
         ctx.fillStyle=textMuted
         ctx.font='9px "JetBrains Mono",monospace'
@@ -295,49 +308,62 @@ function initMobileCanvas(canvas:HTMLCanvasElement, wrap:HTMLDivElement) {
     NODES.forEach((n, i) => {
       const px = nodePositions[i].x - camX
       const py = nodePositions[i].y
-      const target = i <= visitedUpTo ? 1 : 0
-      expand[i] = lerp(expand[i], target, 0.07)
+      let target = 0
+      if (i === activeNode) target = 1
+      else if (activeNode >= 0 && Math.abs(i - activeNode) === 1) target = 0.4
+      else if (i <= visitedUpTo) target = 0.15
+      expand[i] = lerp(expand[i], target, 0.06)
       const [r, g, b] = n.col
-      const baseR = 7, bonusR = expand[i] * 9, dotR = baseR + bonusR
+      const f = expand[i]
+      const dotR = 4 + f * 12
 
       const visFactor = clamp(1 - Math.abs(px - VW / 2) / (VW / 2 + 30), 0, 1)
       if (visFactor < 0.01) return
       ctx.globalAlpha = visFactor
 
-      const grd = ctx.createRadialGradient(px, py, 0, px, py, dotR * 3)
-      grd.addColorStop(0, `rgba(${r},${g},${b},${0.25 * expand[i]})`)
-      grd.addColorStop(1, `rgba(${r},${g},${b},0)`)
-      ctx.beginPath(); ctx.arc(px, py, dotR * 3, 0, Math.PI * 2)
-      ctx.fillStyle = grd; ctx.fill()
+      if (f > 0.05) {
+        const grd = ctx.createRadialGradient(px, py, 0, px, py, dotR * 3.5)
+        grd.addColorStop(0, `rgba(${r},${g},${b},${0.3 * f})`)
+        grd.addColorStop(1, `rgba(${r},${g},${b},0)`)
+        ctx.beginPath(); ctx.arc(px, py, dotR * 3.5, 0, Math.PI * 2)
+        ctx.fillStyle = grd; ctx.fill()
+      }
 
       ctx.beginPath(); ctx.arc(px, py, dotR, 0, Math.PI * 2)
-      ctx.strokeStyle = `rgba(${r},${g},${b},${0.5 + expand[i] * 0.5})`
-      ctx.lineWidth = 2; ctx.stroke()
+      ctx.strokeStyle = `rgba(${r},${g},${b},${0.35 + f * 0.65})`
+      ctx.lineWidth = 1.5 + f; ctx.stroke()
 
-      ctx.beginPath(); ctx.arc(px, py, dotR - 2, 0, Math.PI * 2)
-      ctx.fillStyle = `rgba(${r},${g},${b},${0.15 + expand[i] * 0.5})`
+      ctx.beginPath(); ctx.arc(px, py, dotR - 1.5, 0, Math.PI * 2)
+      ctx.fillStyle = `rgba(${r},${g},${b},${0.08 + f * 0.45})`
       ctx.fill()
 
-      ctx.beginPath(); ctx.arc(px, py, 3 + expand[i] * 2, 0, Math.PI * 2)
-      ctx.fillStyle = `rgba(${r},${g},${b},${0.7 + expand[i] * 0.3})`
-      ctx.shadowColor = `rgb(${r},${g},${b})`; ctx.shadowBlur = expand[i] * 14
+      ctx.beginPath(); ctx.arc(px, py, 2 + f * 3, 0, Math.PI * 2)
+      ctx.fillStyle = `rgba(${r},${g},${b},${0.5 + f * 0.5})`
+      ctx.shadowColor = `rgb(${r},${g},${b})`; ctx.shadowBlur = f * 16
       ctx.fill(); ctx.shadowBlur = 0
 
-      const labelAlpha = clamp(expand[i] * 2.5, 0, 1) * visFactor
-      if (labelAlpha > 0.08) {
-        const above = py < CANVAS_H * 0.5
-        const ly = above ? py - dotR - 18 : py + dotR + 16
-        const isLight = document.documentElement.classList.contains('light')
-        const textMain = isLight ? 'rgba(15,10,40,0.95)' : 'rgba(226,232,240,0.95)'
-        const textMuted = isLight ? 'rgba(50,40,80,0.75)' : 'rgba(100,116,139,0.85)'
+      const above = py < CANVAS_H * 0.5
+      const ly = above ? py - dotR - 14 : py + dotR + 13
+      const isLight = document.documentElement.classList.contains('light')
+      const textMain = isLight ? 'rgba(15,10,40,0.95)' : 'rgba(226,232,240,0.95)'
+      const textMuted = isLight ? 'rgba(50,40,80,0.75)' : 'rgba(100,116,139,0.85)'
 
-        ctx.globalAlpha = labelAlpha
+      if (f > 0.15) {
+        const yearAlpha = clamp(f * 2.5, 0, 1) * visFactor
+        ctx.globalAlpha = yearAlpha
         ctx.fillStyle = `rgb(${r},${g},${b})`
-        ctx.font = 'bold 11px "JetBrains Mono",monospace'
+        ctx.font = `bold ${10 + f * 2}px "JetBrains Mono",monospace`
         ctx.textAlign = 'center'
         ctx.fillText(n.year, px, ly)
+        ctx.globalAlpha = 1
+      }
+
+      if (f > 0.5) {
+        const labelAlpha = clamp((f - 0.5) * 4, 0, 1) * visFactor
+        ctx.globalAlpha = labelAlpha
         ctx.fillStyle = textMain
         ctx.font = 'bold 10px "JetBrains Mono",monospace'
+        ctx.textAlign = 'center'
         ctx.fillText(n.label, px, ly + 14)
         ctx.fillStyle = textMuted
         ctx.font = '9px "JetBrains Mono",monospace'
